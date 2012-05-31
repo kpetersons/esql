@@ -1,0 +1,13 @@
+.accordion-group
+  .accordion-heading
+    %div.accordion-toggle{'data-toggle' => "collapse", 'data-target'=>"#connections_target"} 
+      %h5 Connections
+  #connections_target.collapse.in.accordion-body
+    %ul.accordion-inner.unstyled.nav.nav-list      
+      =hb 'each connections' do
+        =hb 'view Esql.ConnectionsIndexItemView connectionBinding="this"'        
+      %li.divider         
+      %li
+        %a.clearfix{:href => '#', :event => {:action => 'newConnection'}}
+          %i.icon-star
+          Add new

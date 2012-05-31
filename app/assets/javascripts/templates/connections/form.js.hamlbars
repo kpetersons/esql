@@ -1,0 +1,30 @@
+%form.form.form-horizontal{:action => '/connections'}
+  %fieldset
+    %legend
+      .modal-header  
+        Enter connection data 
+  .modal-body
+    .control-group
+      .control-label
+        %label Adapter
+      .controls
+        {{view Ember.Select   name="adapter" contentBinding="Esql.adaptersController" optionLabelPath="content.name" optionValuePath="content.id" selectionBinding="adapter" valueBinding="adapter"}}  
+    .control-group
+      .control-label
+        %label Name
+      .controls
+        {{view Ember.TextField valueBinding="name" name="name"}}
+    .control-group
+      .control-label
+        %label Username
+      .controls
+        {{view Ember.TextField valueBinding="username"  name="username"}}      
+    .control-group
+      .control-label
+        %label Password
+      .controls
+        {{view Ember.TextField valueBinding="password"  name="password" type="password"}}                 
+  .modal-footer
+    .btn-group.pull-right
+      %a.btn.btn-primary{:href => '#', :event => {:action => 'confirmSaveConnection'}} Save  
+      %a.btn{:event => {:href => '#', :action => 'cancelSaveConnection'}} Cancel

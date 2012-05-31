@@ -1,0 +1,8 @@
+.span2.vls
+  %script{:type => 'text/x-handlebars'}
+    {{view Esql.ConnectionsIndexView}}
+%script
+  $('.vls .accordion').collapsible()
+.span10
+  =yield
+  

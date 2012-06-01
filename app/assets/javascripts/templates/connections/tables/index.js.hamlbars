@@ -1,0 +1,7 @@
+%a{:href => '#'}
+  %i.icon-refresh
+  Tables
+%ul.unstyled.left-2em
+  =hb 'each tables' do
+    =hb 'view Esql.TablesIndexItemView tableBinding="this"'        
+.divider

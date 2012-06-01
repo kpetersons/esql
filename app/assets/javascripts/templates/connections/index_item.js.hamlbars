@@ -1,3 +1,5 @@
-%a{:href => '#'}
+%a{:href => '#', :event => {:action => 'toggleConnectionDetails'}}
   %i.icon-folder-close
   =hb 'connection.name'
+=hb 'if connection.isOpen' do
+  =hb 'view Esql.TablesIndexView tablesBinding="connection.connectionTables"'

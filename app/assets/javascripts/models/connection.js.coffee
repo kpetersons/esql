@@ -8,8 +8,15 @@ Esql.Connection = DS.Model.extend
   
   # == Relationships
   adapter: DS.belongsTo('Esql.Adapter')
+  tables: DS.hasMany('Esql.Table')
 
   # == URL  
   url: 'connection'
-
+  
+  # == Runtime attributes
+  isOpen: false
+  
+  connectionTables: (->
+    return Esql.store.find(Esql.Table, {connection_id: @get('id')})
+  ).property()
   

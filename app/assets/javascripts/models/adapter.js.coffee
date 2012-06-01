@@ -4,7 +4,7 @@ Esql.Adapter = DS.Model.extend
   name:       DS.attr('string')
   
   # == Relationships
-  connections: DS.belongsTo('Esql.Connection')  
+  connections: DS.hasMany('Esql.Connection')  
   
   # == URL
   url: 'adapter'

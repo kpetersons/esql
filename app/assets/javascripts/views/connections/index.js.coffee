@@ -6,6 +6,5 @@ Esql.ConnectionsIndexView = Ember.View.extend (
   classNames: ['accordion']
   
   newConnection: ->
-    console.log @
     Esql.ConnectionsFormView.create().appendTo($('body'))         
 )

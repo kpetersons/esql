@@ -7,6 +7,7 @@ Esql::Application.routes.draw do
   
   resources :connections, :controller => :db_connections
   resources :adapters, :only => [:index]
+  resources :tables
   
   resources :passwords,
     :controller => 'auth/passwords',
